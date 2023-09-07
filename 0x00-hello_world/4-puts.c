@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - print this line "Programmin is like building a multilingual puzzle
+ * main - starting point for the execution of the program
  *
  * return: the programm should return 0 if it runs successfully
  */
