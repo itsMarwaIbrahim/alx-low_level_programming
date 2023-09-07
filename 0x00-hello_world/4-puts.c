@@ -3,7 +3,9 @@
 /**
  * main - starting point for the execution of the program
  *
- * return: the programm should return 0 if it runs successfully
+ * Description: print the line and returen 0 if it runs successfully
+ *
+ * return: the programm should return 0 
  */
 int main(void)
 {
