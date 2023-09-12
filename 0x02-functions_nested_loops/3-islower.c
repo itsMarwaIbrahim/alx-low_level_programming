@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * int _islower - Entry point
- *
+ * _islower - Entry point
+ *@c: check that carachter
  * Return: no return
  */
 int _islower(int c)
