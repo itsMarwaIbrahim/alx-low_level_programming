@@ -8,7 +8,6 @@ void times_table(void)
 {
 	int x;
 	int y;
-	int z;
 	int table[10][10];
 
 	for (x = 0; x < 10; x++)
