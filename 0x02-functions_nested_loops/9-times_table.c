@@ -8,18 +8,24 @@ void times_table(void)
 {
 	int x;
 	int y;
-	int table[10][10];
+	int z;
 
 	for (x = 0; x < 10; x++)
 	{
+		_putchar('0');
 		for (y = 0; x < 10; y++)
 		{
-			table[x][y] = x * y;
-			_putchar(table[x][y]);
 			_putchar(',');
 			_putchar(' ');
-			_putchar(' ');
-		}
+			z = x * y;
+			if (z < 10)
+				_putchar(' ');
+			else
+			{
+				_putchar((z / 10 + '0');
+				_putchar((z % 10 + '0');
+			}
 		_putchar('\n');
+		}
 	}
-}
+}	
