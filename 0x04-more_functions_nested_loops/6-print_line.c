@@ -3,19 +3,21 @@
 
 /**
  * print_line - draws a straight line in the terminal
- * @n: the integer
- * Return: 0
+ * @n: first
+ * @x: second
+ * Return: nothing
  */
 void print_line(int n)
 {
-	int x;
+	int x = 0;
 
-	if (n <= 0)
-		_putchar('\n');
-	else
+	if (n > 0)
 	{
-		for (x = 0; x < n; x++)
+		while (x < n)
+		{
 			_putchar(95);
+			x++;
+		}
 	}
 	_putchar('\n');
 }
