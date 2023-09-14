@@ -4,20 +4,16 @@
 /**
  * print_line - draws a straight line in the terminal
  * @n: first
- * @x: second
  * Return: nothing
  */
 void print_line(int n)
 {
-	int x = 0;
+	int x;
 
 	if (n > 0)
 	{
-		while (x < n)
-		{
+		for (x = 0; x < n; x++)
 			_putchar(95);
-			x++;
-		}
 	}
 	_putchar('\n');
 }
