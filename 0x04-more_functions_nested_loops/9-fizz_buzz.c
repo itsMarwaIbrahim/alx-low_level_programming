@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -18,7 +17,7 @@ int main(void)
 		else if (x % 5 == 0)
 			printf(" Buzz");
 		else
-			printf(" %d\n", x);
+			printf(" %d", x);
 	}
 	return (0);
 }
