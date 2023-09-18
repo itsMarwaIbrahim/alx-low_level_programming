@@ -1,9 +1,10 @@
 #include "main.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - check the code
- *
+ * rev_string - reverse a string
  * Return: Always 0.
  */
 int main(void)
