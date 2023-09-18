@@ -6,7 +6,7 @@
  * @s: string
  * Return: 0
  */
-void rev_strin(char *s)
+void rev_string(char *s)
 {
 	int i;
 	int len = 0;
