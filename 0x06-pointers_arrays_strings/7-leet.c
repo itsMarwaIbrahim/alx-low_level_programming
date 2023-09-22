@@ -7,20 +7,19 @@
  */
 char *leet(char *str)
 {
-	int i = 0;
+	int i = 0, j;
+	char letters[] = {"AEOTLaeotl"};
+	char numbers[] = {"4307143071"};
 
 	while (str[i] != '\0')
 	{
-		if (str[i] == 'a' || str[i] == 'A')
-			str[i] = '4';
-		else if (str[i] == 'e' || str[i] == 'E')
-			str[i] = '3';
-		else if (str[i] == 'o' || str[i] == 'O')
-			str[i] = '0';
-		else if (str[i] == 't' || str[i] == 'T')
-			str[i] = '7';
-		else if (str[i] == 'l' || str[i] == 'L')
-			str[i] = '1';
+		for (j = 0; j < 10; j++)
+		{
+			if (str[i] == letters[j])
+			{
+				str[i] = numbers[j];
+			}
+		}
 		i++;
 	}
 	return (str);
