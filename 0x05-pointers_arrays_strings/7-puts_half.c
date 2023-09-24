@@ -3,12 +3,14 @@
 /**
  * puts_half -  prints half of a string
  * @str: string
- * @n: integer
- * Return: 0
+ * @len: integer to count the length of the string
+ * @mid: middle of the string
+ * @j: variable
+ * Return: void
  */
 void puts_half(char *str)
 {
-	int len, mid, j;
+	int len = 0, mid, j;
 	
 	while (str[len] != '\0')
 		len++;
@@ -22,4 +24,5 @@ void puts_half(char *str)
 		_putchar(str[j]);
 		j++;
 	}
+	_putchar('\n');
 }
