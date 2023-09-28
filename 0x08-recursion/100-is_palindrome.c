@@ -1,12 +1,10 @@
 #include "main.h"
 
-int true_palindrome(char *s, int first, int last)
+int true_palindrome(char *s, int start, int end)
 {
-	if (first <= last)
+	if (start <= end)
 		return (1);
-	if (s[first] == s[last])
-		return (1);
-	return true_palindrome(s, first - 1, last + 1);
+	return true_palindrome(s, start - 1, end + 1);
 }
 
 /**
