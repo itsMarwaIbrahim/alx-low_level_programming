@@ -18,7 +18,7 @@ int _true_prime(int n, int t)
 /**
  * is_prime_number - returns 1 if it's prime number, otherwise return 0
  * @n: integer
- * Return:
+ * Return: 1 if prime, otherwise return 0
  */
 int is_prime_number(int n)
 {
