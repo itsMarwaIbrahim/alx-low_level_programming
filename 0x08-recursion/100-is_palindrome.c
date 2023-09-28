@@ -6,7 +6,9 @@ int true_palindrome(char *s, int start, int end)
 		return (0);
 	if (start < end)
 		return (1);
-	return true_palindrome(s, start + 1, end - 1);
+	start++;
+	end--;
+	return true_palindrome(s, start, end);
 }
 
 /**
