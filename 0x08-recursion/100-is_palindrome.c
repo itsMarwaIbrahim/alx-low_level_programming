@@ -9,13 +9,13 @@
  */
 int true_palindrome(char *s, int start, int end)
 {
-	if (s[start] ==  s[end])
+	if (s[start] == s[end])
 		return (0);
 	if (start < end)
 		return (1);
 	start++;
 	end--;
-	return true_palindrome(s, start, end);
+	return (true_palindrome(s, start, end));
 }
 
 /**
@@ -34,5 +34,5 @@ int is_palindrome(char *s)
 	}
 	if (length == 0 || length == 1)
 		return (1);
-	return true_palindrome(s, 0, length - 1);
+	return (true_palindrome(s, 0, length - 1));
 }
