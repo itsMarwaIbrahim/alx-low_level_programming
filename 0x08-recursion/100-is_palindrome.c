@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * true_palindrome - check if the string is palindrome or not
+ * @s: string
+ * @start: integer
+ * @end: integer
+ * Return: 1 or 0
+ */
 int true_palindrome(char *s, int start, int end)
 {
 	if (s[start] ==  s[end])
