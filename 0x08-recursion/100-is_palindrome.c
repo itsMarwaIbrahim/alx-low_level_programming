@@ -3,12 +3,12 @@
 int true_palindrome(char *s, int start, int end)
 {
 	if (s[start] ==  s[end])
-		return (1);
-	if (start < end)
 		return (0);
+	if (start < end)
+		return (1);
 	start++;
 	end--;
-	return true_palindrome(s, start, end);
+	return true_palindrome(s);
 }
 
 /**
