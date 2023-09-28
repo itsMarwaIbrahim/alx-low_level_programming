@@ -4,7 +4,7 @@ int true_palindrome(char *s, int start, int end)
 {
 	if (start <= end && s[start] == s[end])
 		return (1);
-	return true_palindrome(s, end - 1, start + 1);
+	return true_palindrome(s, start + 1, last - 1);
 }
 
 /**
