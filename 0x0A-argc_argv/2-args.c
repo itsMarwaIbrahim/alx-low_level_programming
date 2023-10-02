@@ -2,8 +2,8 @@
 
 /**
  * main - prints all arguments it receives
- * @agrc: count the number of the arguments
- * @agrv: the value of the arguments that have been given
+ * @argc: count the number of the arguments
+ * @argv: the value of the arguments that have been given
  * Return: print the arguments value/vector
  */
 int main(int argc, char *argv[])
