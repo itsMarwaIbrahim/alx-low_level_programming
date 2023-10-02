@@ -20,6 +20,8 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			return (1);
 		}
+		if (argc == 1)
+			printf("0\n");
 		i++;
 	}
 	printf("%d\n", sum);
