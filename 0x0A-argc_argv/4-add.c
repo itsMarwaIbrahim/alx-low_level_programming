@@ -9,14 +9,14 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1, sum = 0;
+	int i, sum = 0;
 
 	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
 	}
-	while (i < argc)
+	for (i = 1; i < argc; i++)
 	{
 		if (*argv[i] >= 48 && *argv[i] <= 57)
 		{
@@ -27,7 +27,6 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			return (1);
 		}
-		i++;
 	}
 	printf("%d\n", sum);
 	return (0);
