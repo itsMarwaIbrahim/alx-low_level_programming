@@ -1,13 +1,15 @@
 #include "main.h"
 
 /**
- * _strncpy - copies a string
+ * _strncat - concatenates two strings
  * @dest: destination
  * @src: source
- * @n: integer
- * Return: dest
+ * Return 0 if success
  */
-char *_strncpy(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
-	return (0);
+        int i = 0, j = 0;
+
+        while (dest[i] != '\0')
+                i++;
 }
