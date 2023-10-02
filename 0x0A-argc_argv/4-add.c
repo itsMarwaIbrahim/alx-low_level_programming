@@ -11,6 +11,7 @@
 int main(int argc, char *argv[])
 {
 	int i, sum = 0;
+	char *n;
 
 	if (argc == 1)
 	{
@@ -19,15 +20,17 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] < 47 || *argv[i] > 58)
+		n = argv[i];
+		while (*n)
 		{
-			printf("Error\n");
-			return (1);
+			if (*n < '0' || *n > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
+			n++;
 		}
-		if (isdigit((unsigned char)*argv[i]))
-		{
-			sum += atoi(argv[i]);
-		}
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
