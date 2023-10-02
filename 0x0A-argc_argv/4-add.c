@@ -19,14 +19,14 @@ int main(int argc, char *argv[])
 	}
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] > 47 && *argv[i] < 58)
-		{
-			sum += atoi(argv[i]);
-		}
-		if (!isdigit((unsigned char)*argv[i]))
+		if (*argv[i] < 47 || *argv[i] > 58)
 		{
 			printf("Error\n");
 			return (1);
+		}
+		if (isdigit((unsigned char)*argv[i]))
+		{
+			sum += atoi(argv[i]);
 		}
 	}
 	printf("%d\n", sum);
