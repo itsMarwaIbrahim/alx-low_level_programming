@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 /**
- * main -
- * @
- * Return:
+ * main - prints all arguments it receives
+ * @argc: count the numbers
+ * @argv: argument vector
+ * Return: the number of arguments
  */
-int main(int argc, char *argv[] )
+int main(int argc, char *argv[])
 {
 	(void) argv;
 	printf("%d\n", argc - 1);
