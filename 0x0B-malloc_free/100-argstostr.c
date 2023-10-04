@@ -13,12 +13,12 @@ char *argstostr(int ac, char **av)
 	char *concat;
 
 	if (ac == 0 || av == NULL)
-		return (malloc(1));
+		return (NULL);
 
 	while (i < ac)
 	{
 		if (av[i] == NULL)
-			return (malloc(1));
+			return (NULL);
 
 		while (av[i][j] != '\0')
 		{
@@ -31,13 +31,13 @@ char *argstostr(int ac, char **av)
 
 	concat = (char *)malloc(sizeof(char) * length + 1);
 	if (concat == NULL)
-		return (malloc(1));
+		return (NULL);
 
 	i = 0;
 	while (i < ac)
 	{
 		if (av[i] == NULL)
-			return (malloc(1));
+			return (NULL);
 
 		j = 0;
 		while (av[i][j] != '\0')
