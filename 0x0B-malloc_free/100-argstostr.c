@@ -30,10 +30,7 @@ char *argstostr(int ac, char **av)
 		if (av[i] == NULL)
 			return (NULL);
 		for (i = 0; av[i][j] != '\0'; j++)
-		{
-			concat[length++] = av[i][j];
-			count++;
-		}
+			concat[count++] = av[i][j];
 		concat[count++] = '\n';
 	}
 	concat[count] = '\0';
