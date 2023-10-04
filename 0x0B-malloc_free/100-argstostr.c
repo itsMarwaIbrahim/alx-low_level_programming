@@ -14,42 +14,28 @@ char *argstostr(int ac, char **av)
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-
-	while (i < ac)
+	for (i = 0; i < ac; i++)
 	{
 		if (av[i] == NULL)
 			return (NULL);
-
-		while (av[i][j] != '\0')
-		{
-			j++;
+		for (j = 0; av[i][j] != '\0'; j++)
 			length++;
-		}
 		length++; /* for new line after each argument string */
-		i++;
 	}
-
 	concat = (char *)malloc(sizeof(char) * length + 1);
 	if (concat == NULL)
 		return (NULL);
-
-	i = 0;
-	while (i < ac)
+	for (i = 0; i < ac; i++)
 	{
 		if (av[i] == NULL)
 			return (NULL);
-
-		j = 0;
-		while (av[i][j] != '\0')
+		for (i = 0; av[i][j] != '\0'; j++)
 		{
 			concat[length++] = av[i][j];
-			j++;
 			count++;
 		}
 		concat[count++] = '\n';
-		i++;
 	}
-
 	concat[count] = '\0';
 	return (concat);
 }
