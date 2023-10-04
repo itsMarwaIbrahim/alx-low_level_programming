@@ -3,8 +3,8 @@
 
 /**
  * argstostr - concatenates all the arguments of your program
- * @ac:
- * @av:
+ * @ac: argument count
+ * @av: argument passed
  * Return:
  */
 char *argstostr(int ac, char **av)
