@@ -42,11 +42,11 @@ char *argstostr(int ac, char **av)
 		j = 0;
 		while (av[i][j] != '\0')
 		{
-			*(concat + count) = av[i][j];
+			concat[length++] = av[i][j];
 			j++;
 			count++;
 		}
-		concat[count] = '\n';
+		concat[count++] = '\n';
 		i++;
 	}
 
