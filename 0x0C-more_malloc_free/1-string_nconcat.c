@@ -36,6 +36,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (concat == NULL)
 		return (NULL);
 
+	while (i < len1 && j < n)
+	{
+		if (i < len2)
+			concat[ = *s1;
+		else
+			*concat = s2[i - len1];
+		i++;
+	}
+
 	while (*ptr_s2 != '\0')
 	{
 		*s1 = *ptr_s2;
