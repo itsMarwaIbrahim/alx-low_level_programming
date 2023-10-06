@@ -9,11 +9,11 @@
 void *malloc_checked(unsigned int b)
 {
 	void *ptr_alloc_mem;
-       
+
 	ptr_alloc_mem = malloc(b);
 
-	if (ptr_alloc_mem == NULL)
-		exit(98);
+	if (ptr_alloc_mem == NULL) /* in the case of failuer to allocate */
+		exit(98);	/* cause normal with a stautes value of 98 */
 
 	return (ptr_alloc_mem);
 }
