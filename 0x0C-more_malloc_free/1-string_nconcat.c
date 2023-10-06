@@ -3,9 +3,9 @@
 
 /**
  * string_nconcat - concatenates two strings
- * @s1:
- * @s2:
- * @n:
+ * @s1: the first string
+ * @s2: the second string
+ * @n: bytes of s2 that should concatensates to s1
  * Return: pointer - point to a newly allocated space in memory
  *	If if fails return NULL
  */
