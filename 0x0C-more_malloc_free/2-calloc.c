@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (ptr_calloc != NULL)
 	{
-		while (index < size) /* this loop replacing memset function */
+		while (index < size) /* this loop is replacing memset function */
 		{
 			ptr_calloc[index] = 0;
 			index++;
