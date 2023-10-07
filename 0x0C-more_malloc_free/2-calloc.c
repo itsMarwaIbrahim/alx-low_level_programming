@@ -28,12 +28,10 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	{
 		while (index < sum) /* this loop is replacing memset function */
 		{
-			index++;
 			container[index] = 0;
+			index++;
 		}
 	}
-	if (ptr_calloc == NULL)
-		return (NULL);
 
 	return (ptr_calloc);
 }
