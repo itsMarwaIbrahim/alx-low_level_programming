@@ -34,7 +34,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 	if (ptr_calloc == NULL)
 		return (NULL);
-	free(ptr_calloc);
 
 	return (ptr_calloc);
 }
