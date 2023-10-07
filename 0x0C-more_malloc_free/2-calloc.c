@@ -13,19 +13,20 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr_calloc;
 	char *container;
-	unsigned int index = 0;
+	unsigned int index = 0, sum;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	ptr_calloc = malloc(nmemb * size);
+	sum = nmemb * size;
+	ptr_calloc = malloc(sum);
 	if (ptr_calloc == NULL) /* if it fails to allocate, return NULL */
 		return (NULL);
 
 	container = ptr_calloc;
 	if (ptr_calloc != NULL)
 	{
-		while (index < size) /* this loop is replacing memset function */
+		while (index < sum) /* this loop is replacing memset function */
 			container[index++] = 0;
 	}
 	if (ptr_calloc == NULL)
