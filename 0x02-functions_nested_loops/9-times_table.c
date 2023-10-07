@@ -2,8 +2,7 @@
 
 /**
  * times_table - 9 times table
- * @x: first
- * @y: second
+ *
  * Return: nothing
  */
 void times_table(void)
