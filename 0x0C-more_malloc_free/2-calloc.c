@@ -11,22 +11,20 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *ptr_calloc, index = 0;
+	unsigned int *ptr_calloc;
+	unsigned int index = 0;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	ptr_calloc = (unsigned int *)malloc(nmemb * size);
+	ptr_calloc = (void *)malloc(nmemb * size);
 	if (ptr_calloc == NULL) /* if it fails to allocate, return NULL */
 		return (NULL);
 
 	if (ptr_calloc != NULL)
 	{
 		while (index < size) /* this loop is replacing memset function */
-		{
-			ptr_calloc[index] = 0;
-			index++;
-		}
+			ptr_calloc[index++] = 0;
 	}
 	free(ptr_calloc);
 
