@@ -11,7 +11,8 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *ptr_calloc, *container;
+	unsigned int *ptr_calloc;
+	char *container;
 	unsigned int index = 0;
 
 	if (nmemb == 0 || size == 0)
