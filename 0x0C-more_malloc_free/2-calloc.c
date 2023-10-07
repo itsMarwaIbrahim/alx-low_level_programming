@@ -17,7 +17,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	ptr_calloc = (void *)malloc(nmemb * size);
+	ptr_calloc = (unsigned int *)malloc(nmemb * size);
 	if (ptr_calloc == NULL) /* if it fails to allocate, return NULL */
 		return (NULL);
 
