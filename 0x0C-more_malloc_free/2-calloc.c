@@ -11,14 +11,14 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *ptr_calloc;
+	void *ptr_calloc;
 	char *container;
 	unsigned int index = 0;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	ptr_calloc = (unsigned int *)malloc(nmemb * size);
+	ptr_calloc = malloc(nmemb * size);
 	if (ptr_calloc == NULL) /* if it fails to allocate, return NULL */
 		return (NULL);
 
