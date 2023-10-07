@@ -11,7 +11,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *ptr_calloc;
+	unsigned int *ptr_calloc, *container;
 	unsigned int index = 0;
 
 	if (nmemb == 0 || size == 0)
@@ -21,10 +21,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr_calloc == NULL) /* if it fails to allocate, return NULL */
 		return (NULL);
 
+	container = ptr_calloc;
 	if (ptr_calloc != NULL)
 	{
 		while (index < size) /* this loop is replacing memset function */
-			ptr_calloc[index++] = 0;
+			container[index++] = 0;
 	}
 	if (ptr_calloc == NULL)
 		return (NULL);
