@@ -46,7 +46,7 @@ char *strcpy_(char *destination, char *source)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
-	int lenName, lenOwn, index = 0;
+	int lenName, lenOwn;
 
 	new_dog = malloc(sizeof(dog_t));
 	if (new_dog == NULL)
@@ -54,21 +54,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	lenName = strlen_(name);
 	(*new_dog).name = malloc(lenName + 1);
-	if (lenName < 0)
+	if ((*new_dog).name == NULL)
 		return (NULL);
 
-	while (index < lenName)		/* this loop replacing the strcpy function */
-	{
-		(*new_dog).name[index] = name[index];
-		index++;
-	}
-	(*new_dog).name[index] = '\0';
+	strcpy_((*new_dog).name, name);
 
 	(*new_dog).age = age;
 
 	lenOwn = strlen_(owner);
 	(*new_dog).owner = malloc(lenOwn + 1);
-	if (lenOwn < 0)
+	if ((*new_dog).owner == NULL)
 		return (NULL);
 
 	strcpy_((*new_dog).owner, owner);
