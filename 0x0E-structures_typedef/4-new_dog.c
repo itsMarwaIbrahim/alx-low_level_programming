@@ -65,6 +65,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 	strcpy_((*new_dog).name, name);
+	(*new_dog).name[lenName] = '\0';
 
 	(*new_dog).age = age;
 
