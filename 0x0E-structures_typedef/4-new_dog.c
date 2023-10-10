@@ -54,7 +54,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	lenName = strlen_(name);
 	(*new_dog).name = malloc(lenName + 1);
-	if ((*new_dog).name == NULL)
+	if (lenName < 0)
 		return (NULL);
 
 	while (index < lenName)		/* this loop replacing the strcpy function */
@@ -68,7 +68,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	lenOwn = strlen_(owner);
 	(*new_dog).owner = malloc(lenOwn + 1);
-	if ((*new_dog).owner == NULL)
+	if (lenOwn < 0)
 		return (NULL);
 
 	strcpy_((*new_dog).owner, owner);
