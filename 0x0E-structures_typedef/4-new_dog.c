@@ -5,6 +5,7 @@
 /**
  * strlen_ - count the length of a string
  * @string: the string to count its length
+ * Return: length
  */
 
 int strlen_(char *string)
@@ -20,6 +21,7 @@ int strlen_(char *string)
  * strcpy_ - copy the source to the destination string
  * @destination: the destination string
  * @source: the source
+ * Return: destination
  */
 char *strcpy_(char *destination, char *source)
 {
@@ -39,6 +41,7 @@ char *strcpy_(char *destination, char *source)
  * @name: the dog's name - a string
  * @age: the dog's age - a float number
  * @owner: the dog't owner - a string
+ * Return: a pointer if it success or NULL if if fails
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -54,7 +57,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if ((*new_dog).name == NULL)
 		return (NULL);
 
-	while (index < lenName)             /* this loop replacing the strcpy function */
+	while (index < lenName)		/* this loop replacing the strcpy function */
 	{
 		(*new_dog).name[index] = name[index];
 		index++;
@@ -62,6 +65,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	(*new_dog).name[index] = '\0';
 
 	(*new_dog).age = age;
+
 	lenOwn = strlen_(owner);
 	(*new_dog).owner = malloc(lenOwn + 1);
 	if ((*new_dog).owner == NULL)
