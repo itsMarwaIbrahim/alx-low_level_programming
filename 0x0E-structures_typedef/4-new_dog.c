@@ -12,11 +12,8 @@ int strlen_(char *string)
 {
 	int length = 0;
 
-	while (*string != '\0')
-	{
-		string++;
+	while (string[length] != '\0')
 		length++;
-	}
 	return (length);
 }
 
@@ -28,14 +25,13 @@ int strlen_(char *string)
  */
 char *strcpy_(char *destination, char *source)
 {
-	int i = 0;
-
-	while (source[i] != '\0')
+	while (*source != '\0')
 	{
-		destination[i] = source[i];
-		i++;
+		*destination = *source;
+		destination++;
+		source++;
 	}
-	destination[i] = '\0';
+	*destination = '\0';
 	return (destination);
 }
 
