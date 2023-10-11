@@ -2,10 +2,13 @@
 
 /**
  * int_index - searches: for an (integer)
- * @array:
+ * @array: a pointer to to pass arrays to the function
  * @size: the number of elements in the array "array"
  * @cmp: a pointer to the function to be used to compare values
- * Return:
+ * Return: If no element matches, return -1
+ *	If size <= 0, return -1
+ *	the index of the first element for 
+ *		which the cmp function does not return 0
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
@@ -14,11 +17,14 @@ int int_index(int *array, int size, int (*cmp)(int))
 	if (size <= 0)
 		return (-1);
 
-	while (index < size)
+	if (cmp != NULL && array != NULL)
 	{
-		if (cmp(array[index]) != 0)
-			return index;
-		index++;
+		while (index < size)
+		{
+			if (cmp(array[index]) != 0)
+				return index;
+			index++;
+		}
 	}
 
 	return (-1);
