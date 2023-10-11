@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 
 	opera = (argv[2]);
 
-	if (opera == NULL)
+	if (get_op_func(opera) == NULL)
 	{
 		printf("Error\n");
 		exit(99);
