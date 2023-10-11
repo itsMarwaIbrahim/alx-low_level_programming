@@ -28,6 +28,16 @@ int main(int argc, char *argv[])
 	}
 
 	num2 = atoi(argv[3]);
+	if (*argv[3] == 0 && (*argv[2] == '/' || *argv[2] == '%'))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	if (*argv[1] == 0 && (*argv[2] == '/' || *argv[2] == '%'))
+	{
+		printf("Error\n");
+		exit(100);
+	}
 
 	printf("%d\n", get_op_func(opera)(num1, num2));
 	return (0);
