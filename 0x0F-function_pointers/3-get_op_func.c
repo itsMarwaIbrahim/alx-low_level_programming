@@ -6,11 +6,12 @@
  * get_op_func - function that corresponds to the operator
  *              given as a parameter
  * @s: the operator passed as argument to the program
+ * Return: a pointer to the function that corresponds to
+ *	the operator given as a parameter
  */
 int (*get_op_func(char *s))(int, int)
 {
-	op_t ops[] =
-	{
+	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
@@ -23,7 +24,7 @@ int (*get_op_func(char *s))(int, int)
 	while (i < 5)
 	{
 		if (strcmp(ops[i].op, s) == 0)
-			return ops[i].f;
+			return (ops[i].f);
 		i++;
 	}
 	return (ops[i].f);
