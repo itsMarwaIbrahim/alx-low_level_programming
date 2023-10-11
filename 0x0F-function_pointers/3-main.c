@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	int num1, num2;
-	char *opera;
+	int (*opera)(int, int);
 
 	if (argc != 4)
 	{
@@ -18,10 +18,15 @@ int main(int argc, char *argv[])
 	}
 
 	num1 = atoi(argv[1]);
+	
+	if (argv[2][1] == '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	opera = get_op_func(argv[2]);
 
-	opera = (argv[2]);
-
-	if (get_op_func(opera) == NULL)
+	if (opera == NULL)
 	{
 		printf("Error\n");
 		exit(99);
@@ -39,6 +44,6 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 
-	printf("%d\n", get_op_func(opera)(num1, num2));
+	printf("%d\n", opera(num1, num2));
 	return (0);
 }
