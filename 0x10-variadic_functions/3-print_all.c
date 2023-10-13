@@ -20,7 +20,7 @@ void print_all(const char * const format, ...)
 		{
 			case 's':
 					charPtr = va_arg(anything, char *);
-					printf("%s", charPtr ? charPtr : "(nil)");
+					charPtr ? printf("%s", charPtr) : printf("(nil)");
 					break;
 			case 'i':
 					printf("%d", va_arg(anything, int));
@@ -34,7 +34,7 @@ void print_all(const char * const format, ...)
 			default:
 				continue;
 		}
-		printf(format[index] ? ", " : "\n");
+		format[index] ? printf(", ") : printf("\n");
 	}
 	va_end(anything);
 }
