@@ -18,9 +18,9 @@ void print_all(const char * const format, ...)
 		{
 			case 's':
 					charPtr = va_arg(anything, char *);
-					if (!charPtr)
-						charPtr = "(nil)";
-					printf("%s", charPtr);
+					if (charPtr)
+						printf("%s", charPtr);
+					printf("(nil)");
 					break;
 			case 'i':
 					printf("%d", va_arg(anything, int));
