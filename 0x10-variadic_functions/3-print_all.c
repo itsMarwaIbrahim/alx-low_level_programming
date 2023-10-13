@@ -29,13 +29,12 @@ void print_all(const char * const format, ...)
 					printf("%c", va_arg(anything, int));
 					break;
 			case 'f':
-					printf("%f", va_arg(anything, double)); break;
+					printf("%f", va_arg(anything, double));
+					break;
 			default:
 				continue;
 		}
-		if (format[index])
-			printf(", ");
+		printf("%s", format[index] ? ", " : "\n");
 	}
-	printf("\n");
 	va_end(anything);
 }
