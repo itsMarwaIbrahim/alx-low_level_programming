@@ -10,6 +10,7 @@ void print_all(const char * const format, ...)
 	unsigned int index = 0;
 	char *charPtr;
 	va_list anything;
+
 	va_start(anything, format);
 	while (format && format[index] != '\0')
 	{
