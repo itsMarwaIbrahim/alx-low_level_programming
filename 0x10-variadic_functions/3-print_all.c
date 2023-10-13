@@ -34,7 +34,7 @@ void print_all(const char * const format, ...)
 			default:
 				continue;
 		}
-		printf("%s", format[index] ? ", " : "\n");
+		printf(format[index] ? ", " : "\n");
 	}
 	va_end(anything);
 }
