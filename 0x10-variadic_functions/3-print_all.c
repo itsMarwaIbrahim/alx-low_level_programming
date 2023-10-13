@@ -1,18 +1,15 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-
 /**
  * print_all - a function that prints anything
  * @format: a list of types of arguments passed to the function
- * Return: nothing - void
  */
 void print_all(const char * const format, ...)
 {
 	unsigned int index = 0;
 	char *charPtr;
 	va_list anything;
-
 	va_start(anything, format);
 	while (format && format[index] != '\0')
 	{
@@ -20,7 +17,9 @@ void print_all(const char * const format, ...)
 		{
 			case 's':
 					charPtr = va_arg(anything, char *);
-					charPtr ? printf("%s", charPtr) : printf("(nil)");
+					if (!charPtr)
+						charPtr = "(nil)";
+					printf("%s", charPtr);
 					break;
 			case 'i':
 					printf("%d", va_arg(anything, int));
@@ -34,7 +33,9 @@ void print_all(const char * const format, ...)
 			default:
 				continue;
 		}
-		format[index] ? printf(", ") : printf("\n");
+		if (format[index])
+			printf(", ");
 	}
+	printf("\n");
 	va_end(anything);
 }
