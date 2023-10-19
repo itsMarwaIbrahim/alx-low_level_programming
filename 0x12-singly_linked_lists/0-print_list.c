@@ -8,14 +8,14 @@
  */
 size_t print_list(const list_t *h)
 {
-	size_t iterate;
+	size_t node_count;
 
-	for (iterate = 0; h; h = (*h).next, iterate++)
+	for (node_count = 0; h; h = (*h).next, node_count++)
 	{
 		if ((*h).str)
-			printf("%s\n", (*h).str);
+			printf("[%d] %s\n", (*h).len, (*h).str);
 		else
 			printf("[0] (nil)\n");
 	}
-	return (iterate);
+	return (node_count);
 }
