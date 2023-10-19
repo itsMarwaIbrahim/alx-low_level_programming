@@ -8,13 +8,13 @@
  * @str: a pointer to a constant character string
  */
 list_t *add_node(list_t **head, const char *str)
-{       
+{
 	list_t *add_node;
 	unsigned int str_length = 0;
 
 	add_node = (list_t *)malloc(sizeof(list_t));
 	if (!add_node)
-		return (NULL); 
+		return (NULL);
 
 	while (str[str_length])
 		str_length++;
@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, const char *str)
 	if (!(*add_node).str)
 	{
 		free(add_node);
-		return(NULL);
+		return (NULL);
 	}
 
 	(*add_node).len = str_length;
