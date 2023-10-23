@@ -8,11 +8,11 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *storeTemp;
+	listint_t *storeTemp, *next;
 
-	for (storeTemp = *head; storeTemp; storeTemp = *head)
+	for (storeTemp = *head; storeTemp; storeTemp = next)
 	{
-		*head = (**head).next;
+		next = (*storeTemp).next;
 		free(storeTemp);
 	}
 
