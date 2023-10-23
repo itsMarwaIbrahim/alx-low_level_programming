@@ -12,8 +12,9 @@ void free_listint2(listint_t **head)
 
 	for (storeTemp = *head; storeTemp; storeTemp = *head)
 	{
-		*head = (*head)->next;
+		*head = (**head).next;
 		free(storeTemp);
 	}
+
 	*head = NULL;
 }
