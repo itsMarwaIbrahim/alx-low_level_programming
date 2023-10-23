@@ -12,7 +12,7 @@ int pop_listint(listint_t **head)
 	int storeData;
 	listint_t *storeTemp;
 
-	if (!head)
+	if (!*head)
 		return (0);
 
 	storeData = (*head)->n;
