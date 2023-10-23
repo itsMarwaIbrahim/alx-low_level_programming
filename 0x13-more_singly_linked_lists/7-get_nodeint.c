@@ -9,13 +9,13 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	litstint_t storeTemp;
+	litstint_t *storeTemp;
 	unsigned int counter = 0;
 
 	if (!head)
 		return (NULL);
 
-	for (storeTemp = head; storeTemp; counter++);
+	for (storeTemp = head; storeTemp; counter++)
 	{
 		if (counter == index)
 			return (storeTemp);
