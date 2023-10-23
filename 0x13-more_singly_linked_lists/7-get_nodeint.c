@@ -9,16 +9,18 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
+	litstint_t storeTemp;
 	unsigned int counter = 0;
 
 	if (!*head)
 		return (NULL);
 
-	while (counter < index)
+	for (storeTemp = head; storeTemp; counter++);
 	{
-		head = (*head).next;
-		counter++;
+		if (counter == index)
+			return (storeTemp);
+		storeTemp = (*storeTemp).next;
 	}
 
-	return (head);
+	return (NULL);
 }
