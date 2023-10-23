@@ -10,6 +10,9 @@ void free_listint2(listint_t **head)
 {
 	listint_t *storeTemp, *next;
 
+	if (!head)
+		return;
+
 	for (storeTemp = *head; storeTemp; storeTemp = next)
 	{
 		next = (*storeTemp).next;
