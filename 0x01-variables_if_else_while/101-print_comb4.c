@@ -8,6 +8,7 @@
 int main(void)
 {
 	int first = 0, second, third, flag = 1;
+
 	while (first < 10)
 	{
 		second = first + 1;
