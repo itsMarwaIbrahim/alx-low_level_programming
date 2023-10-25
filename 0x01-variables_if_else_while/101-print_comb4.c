@@ -7,8 +7,7 @@
  */
 int main(void)
 {
-	int first = 0, second, third;
-
+	int first = 0, second, third, flag = 1;
 	while (first < 10)
 	{
 		second = first + 1;
@@ -16,11 +15,12 @@ int main(void)
 		{
 			for (third = second + 1; third < 10; third++)
 			{
-				if (first != 0)
+				if (!flag)
 				{
 					putchar(',');
 					putchar(' ');
 				}
+				flag = 0;
 				putchar(48 + first);
 				putchar(48 + second);
 				putchar(48 + third);
@@ -29,7 +29,6 @@ int main(void)
 		}
 		first++;
 	}
-
 	putchar('\n');
 	return (0);
 }
