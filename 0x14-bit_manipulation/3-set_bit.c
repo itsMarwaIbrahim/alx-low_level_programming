@@ -8,6 +8,12 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	return (index >= 8 * sizeof(unsigned long int) ? (unsigned long int)(-1) : (*n |= (1 << index)));
-	return ((*n |= (1 << index)) ? (1) : 0);
+	if (index >= 8 * sizeof(unsigned long int))
+		return (-1);
+
+	else
+	{
+		(*n) = (*n) | (1 << index);
+		return (1);
+	}
 }
