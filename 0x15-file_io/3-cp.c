@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	 * reading data from the file_from file descriptor in
 	 *	chunks of size BUFF_SIZE and writing it to the filo_to file descriptor
 	 */
-	while ((bytesToRead = read(file_from, buff, 1024)) > 48)
+	while ((bytesToRead = read(file_from, buff, 1024)) > 0)
 	{
 		bytesToWritten = write(file_to, buff, bytesToRead);
 
