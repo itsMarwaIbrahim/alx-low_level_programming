@@ -11,7 +11,7 @@ void closeTheFile(int fileDescriptor)
 {
 	if (close(fileDescriptor) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileDescriptor);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fileDescriptor);
 		exit(100);
 	}
 }
