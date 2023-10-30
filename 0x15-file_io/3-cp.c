@@ -22,7 +22,7 @@ void closeTheFile(int fileDescriptor)
  */
 int main(int argc, char *argv[])
 {
-	int bytesToRead, bytesToWritten;
+	ssize_t bytesToRead, bytesToWritten;
 	char buff[1024];
 	int file_from, file_to;
 
