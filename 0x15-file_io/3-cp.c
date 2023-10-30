@@ -3,6 +3,7 @@
 /**
  * closeTheFile - closing a file descriptor
  * @fileDescriptor: the file descriptor that needs to be closed
+ * Return: result
  */
 int closeTheFile(int fileDescriptor)
 {
