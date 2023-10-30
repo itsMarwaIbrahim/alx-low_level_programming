@@ -44,6 +44,11 @@ int main(int argc, char *argv[])
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
+	if (chmod(argv[2], 0664) == -1)
+	{
+		dprintf(2, "Error: Can't set permissions for %s\n", argv[2]);
+		exit(99);
+	}
 	while ((bytesToRead = read(file_from, buff, 1024)) > 0)
 	{
 		bytesToWritten = write(file_to, buff, bytesToRead);
