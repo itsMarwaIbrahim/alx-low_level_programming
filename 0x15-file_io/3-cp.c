@@ -11,7 +11,7 @@ void closeTheFile(int fileDescriptor)
 {
 	if (close(fileDescriptor) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fileDescriptor);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileDescriptor);
 		exit(100);
 	}
 }
@@ -20,7 +20,7 @@ void closeTheFile(int fileDescriptor)
  */
 int main(int argc, char *argv[])
 {
-	ssize_t bytesToRead, bytesToWritten;
+	int bytesToRead, bytesToWritten;
 	char buff[1024];
 	int file_from, file_to;
 
