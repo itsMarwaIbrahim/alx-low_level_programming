@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * closeTheFile -
+ * closeTheFile - closing a file descriptor
+ * @fileDescriptor: the file descriptor that needs to be closed
  */
 void closeTheFile(int fileDescriptor)
 {
@@ -12,7 +13,12 @@ void closeTheFile(int fileDescriptor)
 	}
 }
 /**
- *
+ * main - the entry point of the program
+ *	the purpose is to copy the contents of one file to another file
+ * @argc: an integer that indicates the number of command-line arguments
+ * @argv: an array of strings where each element
+ *	represents a command-line argument
+ * Return: 0 if the program completed without any errors
  */
 int main(int argc, char *argv[])
 {
