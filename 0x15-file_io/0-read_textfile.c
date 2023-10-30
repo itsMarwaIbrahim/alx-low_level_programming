@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * read_textfile - reads a text file and prints it 
+ * read_textfile - reads a text file and prints it
  *	to the POSIX standard output
- * @filname: a pointer to a constant character string 
+ * @filename: a pointer to a constant character string
  *	representing the file name
  * @letters: the number of letters to read from the file
  * Return:the actual number of letters it could read and print
@@ -11,7 +11,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd, bytesRead, bytesWritten;
-	char *buff; /* a pointer to a character array that will hold the contents of the file */
+	/* a pointer to a character array that will hold the contents of the file */
+	char *buff;
 
 	if (!filename)
 		return (0);
@@ -26,11 +27,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	/* The number of bytes actually read is stored in bytesRead */
 	bytesRead = read(fd, buff, letters);
-	/* write function is called to write the contents of buff to the standard output */
+	/* write is called to write the contents of buff to the standard output */
 	bytesWritten = write(STDOUT_FILENO, buff, bytesRead);
 
 	close(fd);
 	free(buff);
-	
+
 	return (bytesWritten);
 }
