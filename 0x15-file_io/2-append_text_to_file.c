@@ -44,7 +44,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		textLen = strlen_(text_content);
 		bytesWritten = write(fileDescriptor, text_content, textLen);
 
-		/* means that the write operation failed, so the file is closed */	
+		/* means that the write operation failed, so the file is closed */
 		if (bytesWritten != textLen)
 		{
 			close(fileDescriptor);
