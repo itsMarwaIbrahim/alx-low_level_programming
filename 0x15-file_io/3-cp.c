@@ -1,94 +1,79 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
+
+#include "main.h"
+#include <stdio.h>
+
 
 /**
- * open_file - opening a file and returning the file descriptor
- * @filename: the name of the file to be opened
- * @flags: specifies the flags to be used when opening the file
- * @mode: the file permissions to be set if the file is created
- *	(owner, group and others)
- * Return: failed -1, or success on file descriptor
- */
-int open_file(const char *filename, int flags, mode_t mode)
-{
-	int fileDescriptor = open(filename, flags, mode);
-
-	if (fileDescriptor == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", filename);
-		exit(98);
-	}
-	return (fileDescriptor);
-}
-
-/**
- * copy_file - copy the contents of one file to another file
- * @file_from: the file descriptor of the file from which data will be read
- * @file_to: the file descriptor of the file to which the data will be written
- */
-void copy_file(int file_from, int file_to)
-{
-	ssize_t bytesToRead, bytesToWritten;
-	char buff[1024];
-
-	while ((bytesToRead = read(file_from, buff, 1024)) > 0)
-	{
-		bytesToWritten = write(file_to, buff, bytesToRead);
-		if (bytesToWritten == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to file\n");
-			exit(99);
-		}
-	}
-
-	if (bytesToRead == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file\n");
-		exit(98);
-	}
-}
-
-/**
- * close_file - closing a file descriptor
- * @fileDescriptor: the file descriptor that needs to be closed
- */
-void close_file(int fileDescriptor)
-{
-	if (close(fileDescriptor) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close file desciptor\n");
-		exit(100);
-	}
-}
-
-/**
- * main -  the entry point of the program
- *	the purpose is to copy the contents of one file to another file
- * @argc: an integer that indicates the number of command-line arguments
- * @argv: an array of strings where each element
- *	represents a command-line argument
- * Return: 0 if the program completed without any errors
+ *
  */
 int main(int argc, char *argv[])
 {
-	int file_from_FD, file_to_FD;
+	ssize_t bytesToRead, bytesToWritten;
+	char buff[1024];
+	int file_from, file_to;
 
+	/* if the number of argument is not the correct one */
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	file_from_FD = open_file(argv[1], O_RDONLY, 0);
-	file_to_FD = open_file(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	/* if file_from does not exist, or if you can not read it */
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
+		exit(98);
+	}
 
-	copy_file(file_from_FD, file_to_FD);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
 
-	close_file(file_from_FD);
-	close_file(file_to_FD);
+	/**
+	 * reading data from the file_from file descriptor in
+	 *	chunks of size BUFF_SIZE and writing it to the filo_to file descriptor
+	 */
+	while ((bytesToRead = read(file_from, buff, 1024)) > 48)
+	{
+		bytesToWritten = write(file_to, buff, bytesToRead);
+
+		if (bytesToWritten == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+	}
+
+	/**
+	 * handling the case where the read system call fails
+	 *	to read data from the file_from file descriptor
+	 */
+	if (bytesToRead == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+
+	/* closing the file_from file descriptor after reading from it */
+	if (close(file_from) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
+	}
+
+	/* closing the file_to file descriptor after writing to it */
+	if (close(file_to) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+		exit(100);
+	}
 
 	return (0);
 }
