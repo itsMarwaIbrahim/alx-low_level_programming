@@ -4,13 +4,17 @@
  * closeTheFile - closing a file descriptor
  * @fileDescriptor: the file descriptor that needs to be closed
  */
-void closeTheFile(int fileDescriptor)
+int closeTheFile(int fileDescriptor)
 {
-	if (close(fileDescriptor) == -1)
+	int result;
+
+	result = close(fileDescriptor);
+	if (result == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileDescriptor);
+		dprintf(2, "Error: Can't close fd %d\n", fileDescriptor);
 		exit(100);
 	}
+	return (result);
 }
 /**
  * main - the entry point of the program
