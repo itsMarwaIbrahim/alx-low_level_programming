@@ -16,7 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!filename)
 		return (0);
 
-	buff = (char )malloc(letters);
+	buff = (char *)malloc(letters);
 	if (!buff)
 		return (0);
 
@@ -25,7 +25,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0); /* 0 indecates an error */
 
 	/* The number of bytes actually read is stored in bytesRead */
-	bytesRead = read(fd, buff, letter);
+	bytesRead = read(fd, buff, letters);
 	/* write function is called to write the contents of buff to the standard output */
 	bytesWritten = write(STDOUT_FILENO, buff, bytesRead);
 
