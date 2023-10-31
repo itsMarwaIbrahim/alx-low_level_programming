@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 {
 	ssize_t bytesToRead, bytesToWritten;
 	char buff[1024];
-	int file_from, file_to;
+	int file_from = 0, file_to = 0;
 
 	/* if the number of argument is not the correct one */
 	if (argc != 3)
